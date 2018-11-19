@@ -1,0 +1,35 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+ # Use only ascii symbols in comments.
+Style/AsciiComments:
+  Enabled: false
+ # Do not use block comments.
+Style/BlockComments:
+  Enabled: false
+ # Avoid using {...} for multi-line blocks.
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*
+ # Use nested module/class definitions instead of compact style.
+Style/ClassAndModuleChildren:
+  Enabled: false
+ # Missing top-level class documentation comment.
+Style/Documentation:
+  Enabled: false
+ # Line is too long.
+Metrics/LineLength:
+  Max: 128
+Style/FrozenStringLiteralComment:
+  Enabled: false
+# この 2 つは単発で動かすのが分かっているので Object を汚染しても問題ない。
+# spec/dummy は Rails Engine を開発するときに絶対に引っかかるので入れておく。
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+    - 'spec/dummy/bin/setup'
+    - 'spec/dummy/bin/update'
+AllCops:
+  TargetRubyVersion: 2.4.1
