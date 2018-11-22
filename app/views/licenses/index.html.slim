@@ -1,0 +1,28 @@
+.form-panel style="padding: 80px; padding-left: 300px;"
+  h4 お支払い情報登録
+  br
+  b クレジット/デビットカード番号
+  = text_field_tag :credit_number, nil, class: 'form-control', style: 'width: 300px;'
+  br
+  b 有効期限
+  .form-inline
+    = select_tag :year, options_for_select(2018..2030), class: 'form-control', style: 'width: 100px;'
+    b 年
+    = select_tag :year, options_for_select(1..12), class: 'form-control', style: 'width: 50px;'
+    b 月
+  br
+  b カード保有者の氏名
+  = text_field_tag :name, nil, class: 'form-control', style: 'width: 300px;'
+  br
+  b 郵便番号
+  = text_field_tag :postal_number, nil, class: 'form-control', style: 'width: 100px;'
+  br
+  b 住所
+  = text_field_tag :address, nil, class: 'form-control', style: 'width: 100px;'
+  br
+  b 電話番号
+  = text_field_tag :telephone_number, nil, class: 'form-control', style: 'width: 300px;'
+  br
+  b メールアドレス
+  = text_field_tag :mail_address, nil, class: 'form-control', style: 'width: 300px;'
+  = submit_tag '登録', class: 'form-control', class: 'btn btn-success', style: 'margin-top: 20px; margin-left: 350px;'
