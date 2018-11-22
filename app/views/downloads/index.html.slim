@@ -44,17 +44,9 @@
     p 　　-----------------------------------。
   br
   .form-inline
-    = check_box_tag :apply, false, class: 'form-control'
-    p 利用規約に同意する。
+    = check_box_tag :apply, class: 'form-control'
+    | 　利用規約に同意する。
   br
-  input type="button" value="ダウンロード" name="download" class="btn btn-success disabled"
+  = button_tag 'ダウンロード', id: 'download', class: 'btn btn-success disabled'
 
-/ script type="text/javascript"
-/   function downloadEnable(boolEnable){
-/     elem = document.getElementsByName("download").item(0);
-/     if(boolEnable){
-/       elem.classList.remove('disabled');
-/     } else {
-/       elem.classList.add('disabled');
-/     };
-/   }
+= javascript_include_tag 'downloads'
