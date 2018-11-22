@@ -25,4 +25,5 @@
   br
   b メールアドレス
   = text_field_tag :mail_address, nil, class: 'form-control', style: 'width: 300px;'
-  = submit_tag '登録', class: 'form-control', class: 'btn btn-success', style: 'margin-top: 20px; margin-left: 350px;'
+  = link_to '登録', downloads_path, class: 'form-control', class: 'btn btn-success', style: 'margin-top: 20px;'
+  / = submit_tag '登録', class: 'form-control', class: 'btn btn-success', style: 'margin-top: 20px;'
