@@ -1,6 +1,12 @@
 .form-panel style="padding: 80px; padding-left: 300px;"
   h4 お支払い情報登録
   br
+  b ユーザー名
+  = text_field_tag :name, nil, class: 'form-control', style: 'width: 300px;'
+  br
+  カード会社のチェックボックス
+  br
+  br
   b クレジット/デビットカード番号
   = text_field_tag :credit_number, nil, class: 'form-control', style: 'width: 300px;'
   br
@@ -14,16 +20,6 @@
   b カード保有者の氏名
   = text_field_tag :name, nil, class: 'form-control', style: 'width: 300px;'
   br
-  b 郵便番号
-  = text_field_tag :postal_number, nil, class: 'form-control', style: 'width: 100px;'
-  br
-  b 住所
-  = text_field_tag :address, nil, class: 'form-control', style: 'width: 100px;'
-  br
-  b 電話番号
-  = text_field_tag :telephone_number, nil, class: 'form-control', style: 'width: 300px;'
-  br
   b メールアドレス
   = text_field_tag :mail_address, nil, class: 'form-control', style: 'width: 300px;'
-  = link_to '登録', downloads_path, class: 'form-control', class: 'btn btn-success', style: 'margin-top: 20px;'
-  / = submit_tag '登録', class: 'form-control', class: 'btn btn-success', style: 'margin-top: 20px;'
+  = link_to '登録', downloads_path, class: 'btn btn-success', style: 'margin-top: 20px;'
