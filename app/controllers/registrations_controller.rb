@@ -1,4 +1,4 @@
-class LicensesController < ApplicationController
+class RegistrationsController < ApplicationController
   def index; end
 
   def create
