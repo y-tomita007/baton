@@ -1,19 +1,21 @@
 class RegistrationsController < ApplicationController
   def index
     @user = MUser.new
+    @user.m_credits.build
   end
 
   def create
-    # @download = Download.new(download_params)
-    #
-    # respond_to do |format|
-    #   if @download.save
-    #     format.html { redirect_to @download, notice: 'Download was successfully created.' }
-    #     format.json { render :show, status: :created, location: @download }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @download.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    @user = MUser.new(user_params)
+    if @user.save
+      redirect_to downloads_path
+    else
+      render :index
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:m_user).permit(:name, :email, m_credits_attributes: %i[name company number expire_on])
   end
 end
