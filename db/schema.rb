@@ -10,18 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_080844) do
+ActiveRecord::Schema.define(version: 2018_11_27_014444) do
 
   create_table "m_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "顧客名称"
     t.string "email", default: "", null: false, comment: "メールアドレス"
-    t.integer "card_company", null: false, comment: "カード会社"
-    t.string "card_name", default: "", null: false, comment: "クレカ名義"
     t.string "poccess", default: "0", null: false, comment: "ライセンス保有数"
     t.boolean "delete_flag", default: false, null: false, comment: "削除フラグ"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "card_expiration_month", null: false, comment: "クレジットカード有効期限"
   end
 
 end
