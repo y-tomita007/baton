@@ -3,25 +3,31 @@
   br
   h4 お支払い情報登録
   br
-  b ユーザー名
-  = text_field_tag :name, nil, class: 'form-control', style: 'width: 300px;'
-  br
-  カード会社のチェックボックス
-  br
-  br
-  b クレジット/デビットカード番号
-  = text_field_tag :credit_number, nil, class: 'form-control', style: 'width: 300px;'
-  br
-  b 有効期限
-  .form-inline
-    = select_tag :year, options_for_select(2018..2030), class: 'form-control', style: 'width: 100px;'
-    b 年
-    = select_tag :year, options_for_select(1..12), class: 'form-control', style: 'width: 50px;'
-    b 月
-  br
-  b カード保有者の氏名
-  = text_field_tag :name, nil, class: 'form-control', style: 'width: 300px;'
-  br
-  b メールアドレス
-  = text_field_tag :mail_address, nil, class: 'form-control', style: 'width: 300px;'
-  = link_to '登録', downloads_path, class: 'btn btn-success', style: 'margin-top: 20px;'
+  = form_for(@user, url: registrations_path(@user)) do |f|
+    = f.label :name, 'ユーザー名'
+    = f.text_field :name, class: 'form-control', style: 'width: 300px;'
+    br
+    = f.label :card_company, 'カードブランド'
+    = f.select :card_company, MUser.card_companies, {}, class: 'form-control', style: 'width: 300px;'
+    br
+    = label_tag :credit_number, 'クレジット/デビットカード番号'
+    = text_field_tag :credit_number, nil, class: 'form-control', style: 'width: 300px;'
+    br
+    = f.label :card_expiration_month, '有効期限'
+    / = f.date_select \
+    /     :card_expiration_month,
+    /     { class: 'form-control' },
+    /     { discard_day: true, use_month_numbers: true }
+    / = f.hidden_field :card_expiration_month
+    / .form-inline
+    /   = select_tag 'user[year]', options_for_select(2018..2030), class: 'form-control expiration', style: 'width: 100px;'
+    /   b 年
+    /   = select_tag 'user[month]', options_for_select(1..12), class: 'form-control expiration', style: 'width: 50px;'
+    /   b 月
+    br
+    b カード保有者の氏名
+    = text_field_tag :name, nil, class: 'form-control', style: 'width: 300px;'
+    br
+    = label_tag :email, 'メールアドレス'
+    = f.text_field :email, class: 'form-control', style: 'width: 300px;'
+    = link_to '登録', downloads_path, class: 'btn btn-success', style: 'margin-top: 20px;'

@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
-  def index; end
+  def index
+    @user = MUser.new
+  end
 
   def create
     # @download = Download.new(download_params)
