@@ -28,14 +28,9 @@
       br
       = f.label :expire_on, '有効期限'
       = cf.hidden_field :expire_on, value: '2018-11-01'
-      / = f.date_select \
-      /     :card_expiration_month,
-      /     { class: 'form-control' },
-      /     { discard_day: true, use_month_numbers: true }
-      / = f.hidden_field :card_expiration_month
-      / .form-inline
-      /   = select_tag 'user[year]', options_for_select(2018..2030), class: 'form-control expiration', style: 'width: 100px;'
-      /   b 年
-      /   = select_tag 'user[month]', options_for_select(1..12), class: 'form-control expiration', style: 'width: 50px;'
-      /   b 月
+      .form-inline
+        = select_tag :expire_year, options_for_select(2018..2030, @expire_on&.year), class: 'form-control expiration', style: 'width: 100px;'
+        b 年
+        = select_tag :expire_month, options_for_select(1..12, @expire_on&.month), class: 'form-control expiration', style: 'width: 50px;'
+        b 月
     = f.submit '登録', class: 'btn btn-success', style: 'margin-top: 20px;'
