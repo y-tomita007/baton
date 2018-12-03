@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resource :registration, only: %i[new create]
-  resources :downloads, only: :index do
+  resource :installer, only: :show do
     collection do
       get :download
     end

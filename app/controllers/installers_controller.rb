@@ -1,7 +1,6 @@
-class DownloadsController < ApplicationController
-  def index; end
+class InstallersController < ApplicationController
+  def show; end
 
-  # REVIEW: DownloadsControllerにdownloadアクションがあるのが気持ち悪い
   def download
     filepath = Rails.root.join('public', 'download_test.txt')
     stat = File.stat(filepath)
