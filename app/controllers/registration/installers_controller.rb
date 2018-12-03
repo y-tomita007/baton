@@ -1,4 +1,4 @@
-class InstallersController < ApplicationController
+class Registration::InstallersController < ApplicationController
   def show; end
 
   def download

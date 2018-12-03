@@ -9,7 +9,7 @@
           li = message
   h4 お支払い情報登録
   br
-  = form_for(@company, url: registration_path(@company)) do |f|
+  = form_for(@company, url: registration_company_path(@company)) do |f|
     = f.label :name, '会社名'
     = f.text_field :name, class: 'form-control', style: 'width: 300px;'
     br

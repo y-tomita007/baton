@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class Registration::CompaniesController < ApplicationController
   def new
     @company = MCompany.new
     @company.m_credits.build
@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
   def create
     @company = MCompany.new company_params
     if @company.save
-      redirect_to downloads_path
+      redirect_to registration_installer_path
     else
       # REVIEW: もっといい方法があるはず
       pull_expire_on_from_params
