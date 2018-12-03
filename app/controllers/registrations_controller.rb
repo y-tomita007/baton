@@ -18,7 +18,11 @@ class RegistrationsController < ApplicationController
   private
 
   def company_params
-    params.require(:m_company).permit(:name, :email, m_credits_attributes: %i[name company number expire_on])
+    params.require(:m_company).permit(
+      :name, :email, :tel, :postal_nummber, :address,
+      :personnel, :personnel_department, :personnel_position,
+      m_credits_attributes: %i[name company number expire_on]
+    )
   end
 
   def pull_expire_on_from_params

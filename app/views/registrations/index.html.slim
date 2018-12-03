@@ -10,8 +10,26 @@
   h4 お支払い情報登録
   br
   = form_for(@company, url: registrations_path(@company)) do |f|
-    = f.label :name, '氏名'
+    = f.label :name, '会社名'
     = f.text_field :name, class: 'form-control', style: 'width: 300px;'
+    br
+    = label_tag :postal_nummber, '郵便番号'
+    = f.text_field :postal_nummber, class: 'form-control', style: 'width: 100px;'
+    br
+    = label_tag :address, '住所'
+    = f.text_field :address, class: 'form-control', style: 'width: 300px;'
+    br
+    = f.label :personnel, '担当者'
+    = f.text_field :personnel, class: 'form-control', style: 'width: 300px;'
+    br
+    = f.label :personnel_department, '担当者部署'
+    = f.text_field :personnel_department, class: 'form-control', style: 'width: 300px;'
+    br
+    = f.label :personnel_position, '担当者役職'
+    = f.text_field :personnel_position, class: 'form-control', style: 'width: 300px;'
+    br
+    = label_tag :tel, '電話番号'
+    = f.text_field :tel, class: 'form-control', style: 'width: 300px;'
     br
     = label_tag :email, 'メールアドレス'
     = f.text_field :email, class: 'form-control', style: 'width: 300px;'
