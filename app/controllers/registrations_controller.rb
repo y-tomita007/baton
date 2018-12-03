@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-  def index
+  def new
     @company = MCompany.new
     @company.m_credits.build
   end
