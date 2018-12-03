@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_025833) do
+ActiveRecord::Schema.define(version: 2018_12_03_062757) do
 
   create_table "m_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
-    t.string "name", default: "", null: false, comment: "顧客名称"
+    t.string "name", default: "", null: false, comment: "名称"
     t.string "email", default: "", null: false, comment: "メールアドレス"
     t.string "poccess", default: "0", null: false, comment: "ライセンス保有数"
-    t.boolean "delete_flag", default: false, null: false, comment: "削除フラグ"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "tel", null: false, comment: "電話番号"
     t.string "personnel", null: false, comment: "担当者"
     t.string "personnel_department", null: false, comment: "担当者の部署"
     t.string "personnel_position", null: false, comment: "担当者の役職"
     t.string "postal_nummber", null: false, comment: "郵便番号"
     t.string "address", null: false, comment: "住所"
+    t.boolean "delete_flag", default: false, null: false, comment: "削除フラグ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "m_credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
