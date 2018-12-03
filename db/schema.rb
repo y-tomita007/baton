@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_062757) do
+ActiveRecord::Schema.define(version: 2018_12_03_064534) do
 
   create_table "m_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "名称"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2018_12_03_062757) do
   end
 
   create_table "m_credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
-    t.integer "m_user_id", null: false, comment: "ユーザーID"
     t.string "name", default: "", null: false, comment: "名義"
     t.string "number", default: "", null: false, comment: "識別番号(クレジット番号上4桁)"
     t.integer "company", null: false, comment: "カード会社"
@@ -36,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_062757) do
     t.boolean "use_flag", default: false, null: false, comment: "使用フラグ"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "m_company_id", null: false, comment: "会社ID"
   end
 
 end
