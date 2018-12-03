@@ -5,7 +5,7 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @company = MCompany.new(company_params)
+    @company = MCompany.new company_params
     if @company.save
       redirect_to downloads_path
     else
