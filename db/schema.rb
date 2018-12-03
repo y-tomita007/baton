@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_063552) do
+ActiveRecord::Schema.define(version: 2018_12_03_023703) do
+
+  create_table "m_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.string "name", default: "", null: false, comment: "顧客名称"
+    t.string "email", default: "", null: false, comment: "メールアドレス"
+    t.string "poccess", default: "0", null: false, comment: "ライセンス保有数"
+    t.boolean "delete_flag", default: false, null: false, comment: "削除フラグ"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "m_credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.integer "m_user_id", null: false, comment: "ユーザーID"
@@ -19,15 +28,6 @@ ActiveRecord::Schema.define(version: 2018_11_27_063552) do
     t.integer "company", null: false, comment: "カード会社"
     t.string "expire_on", null: false, comment: "クレジットカード有効期限"
     t.boolean "use_flag", default: false, null: false, comment: "使用フラグ"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "m_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
-    t.string "name", default: "", null: false, comment: "顧客名称"
-    t.string "email", default: "", null: false, comment: "メールアドレス"
-    t.string "poccess", default: "0", null: false, comment: "ライセンス保有数"
-    t.boolean "delete_flag", default: false, null: false, comment: "削除フラグ"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

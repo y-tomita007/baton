@@ -1,4 +1,4 @@
-class MUser < ApplicationRecord
+class MCompany < ApplicationRecord
   has_many :m_credits
 
   accepts_nested_attributes_for :m_credits

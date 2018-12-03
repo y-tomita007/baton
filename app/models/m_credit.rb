@@ -1,5 +1,5 @@
 class MCredit < ApplicationRecord
-  belongs_to :m_user
+  belongs_to :m_company
 
   before_save :skimming_number
 

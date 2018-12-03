@@ -1,15 +1,15 @@
 .form-panel style="padding: 50px; padding-left: 300px;"
   h3 ユーザー登録
   br
-  - if @user.errors.any?
+  - if @company.errors.any?
     .alert.alert-danger
-      h4 = pluralize(@user.errors.count, t('.error'))
+      h4 = pluralize(@company.errors.count, t('.error'))
       ul
-        - @user.errors.full_messages.each do |message|
+        - @company.errors.full_messages.each do |message|
           li = message
   h4 お支払い情報登録
   br
-  = form_for(@user, url: registrations_path(@user)) do |f|
+  = form_for(@company, url: registrations_path(@company)) do |f|
     = f.label :name, '氏名'
     = f.text_field :name, class: 'form-control', style: 'width: 300px;'
     br
