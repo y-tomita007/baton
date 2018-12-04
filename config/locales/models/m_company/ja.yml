@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      m_company: 会社
+    attributes:
+      m_company:
+        name: 会社名
+        postal_nummber: 郵便番号
+        address: 住所
+        personnel: 担当者
+        personnel_department: 担当者部署
+        personnel_position: 担当者役職
+        tel: 電話番号
+        email: メールアドレス
+      m_company/m_credits:
+        name: カード名義
+        company: ブランド
+        number: クレジット/デビットカード番号
+        expire_on: 有効期限

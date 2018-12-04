@@ -9,6 +9,9 @@ Bundler.require(*Rails.groups)
 module Baton
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.available_locales = :ja
+    config.i18n.default_locale = :ja
     config.load_defaults 5.2
     config.generators do |g|
       g.assets false

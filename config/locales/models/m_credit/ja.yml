@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      m_credit: クレジットカード
+    attributes:
+      m_credit:
+        name: 名義
+        company: ブランド
+        number: クレジット/デビットカード番号
+        expire_on: 有効期限
