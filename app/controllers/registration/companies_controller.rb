@@ -11,7 +11,7 @@ class Registration::CompaniesController < ApplicationController
     else
       # REVIEW: もっといい方法があるはず
       pull_expire_on_from_params
-      render :index
+      render :new
     end
   end
 
