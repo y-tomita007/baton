@@ -9,41 +9,41 @@
   h4 お支払い情報登録
   br
   = form_for(@company, url: registration_company_path(@company)) do |f|
-    = f.label :name, '会社名'
+    = f.label :name
     = f.text_field :name, class: 'form-control', style: 'width: 300px;'
     br
-    = label_tag :postal_nummber, '郵便番号'
+    = f.label :postal_nummber
     = f.text_field :postal_nummber, class: 'form-control', style: 'width: 100px;'
     br
-    = label_tag :address, '住所'
+    = f.label :address
     = f.text_field :address, class: 'form-control', style: 'width: 300px;'
     br
-    = f.label :personnel, '担当者'
+    = f.label :personnel
     = f.text_field :personnel, class: 'form-control', style: 'width: 300px;'
     br
-    = f.label :personnel_department, '担当者部署'
+    = f.label :personnel_department
     = f.text_field :personnel_department, class: 'form-control', style: 'width: 300px;'
     br
-    = f.label :personnel_position, '担当者役職'
+    = f.label :personnel_position
     = f.text_field :personnel_position, class: 'form-control', style: 'width: 300px;'
     br
-    = label_tag :tel, '電話番号'
+    = f.label :tel
     = f.text_field :tel, class: 'form-control', style: 'width: 300px;'
     br
-    = label_tag :email, 'メールアドレス'
+    = f.label :email
     = f.text_field :email, class: 'form-control', style: 'width: 300px;'
     br
     = f.fields_for :m_credits do |cf|
-      = cf.label :company, 'カードブランド'
+      = cf.label :company
       = cf.select :company, MCredit.companies.keys, {}, class: 'form-control', style: 'width: 300px;'
       br
-      = cf.label :number, 'クレジット/デビットカード番号'
+      = cf.label :number
       = cf.text_field :number, class: 'form-control', style: 'width: 300px;'
       br
-      = cf.label :name, 'カード名義'
+      = cf.label :name
       = cf.text_field :name, class: 'form-control', style: 'width: 300px;'
       br
-      = f.label :expire_on, '有効期限'
+      = cf.label :expire_on
       = cf.hidden_field :expire_on, value: '2018-11-01'
       .form-inline
         = select_tag :expire_year, options_for_select(2018..2030, @expire_on&.year), class: 'form-control expiration', style: 'width: 100px;'
