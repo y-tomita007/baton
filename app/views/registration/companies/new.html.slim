@@ -3,7 +3,6 @@
   br
   - if @company.errors.any?
     .alert.alert-danger
-      h4 = pluralize(@company.errors.count, t('.error'))
       ul
         - @company.errors.full_messages.each do |message|
           li = message
