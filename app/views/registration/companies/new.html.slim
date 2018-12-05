@@ -1,5 +1,5 @@
 .form-panel style="padding: 50px; padding-left: 300px;"
-  h3 ユーザー登録
+  h3 利用者登録
   br
   - if @company.errors.any?
     .alert.alert-danger
@@ -10,7 +10,9 @@
   br
   = form_for(@company, url: registration_company_path(@company)) do |f|
     = f.label :name
-    = f.text_field :name, class: 'form-control', style: 'width: 300px;'
+    = f.text_field :name, class: 'form-control',  style: 'width: 300px;'
+    | ※ 個人事業主の方は氏名を入力してください。
+    br
     br
     = f.label :postal_nummber
     = f.text_field :postal_nummber, class: 'form-control', style: 'width: 100px;'
